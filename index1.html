@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Izma 🤍</title>
+    <style>
+        :root {
+            --bg: #fdf7f6;
+            --text: #4a4a4a;
+            --accent: #d49191;
+            --dark-accent: #b86565;
+            --card: #ffffff;
+            --soft-accent: #fef8f7;
+            --rose-red: #c25454;
+            --rose-light: #f5e4e4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 15% 25%, rgba(212, 145, 145, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 85% 75%, rgba(194, 84, 84, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 1px 1px, #f0d8d8 1px, transparent 0);
+            background-size: 100% 100%, 100% 100%, 40px 40px;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .card {
+            background: var(--card);
+            max-width: 600px;
+            width: 100%;
+            padding: 50px 40px;
+            border-radius: 16px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04), 0 8px 40px rgba(0, 0, 0, 0.03);
+            text-align: center;
+            position: relative;
+            animation: gentleAppear 1.2s ease;
+            border: 2px solid #f5e4e4;
+        }
+
+        @keyframes gentleAppear {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Rose decorations */
+        .rose-left, .rose-right {
+            position: absolute;
+            font-size: 2.2rem;
+            animation: roseSway 3s ease-in-out infinite;
+        }
+
+        .rose-left {
+            top: -12px;
+            left: -12px;
+            animation-delay: 0s;
+        }
+
+        .rose-right {
+            top: -12px;
+            right: -12px;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes roseSway {
+            0%, 100% { transform: rotate(-3deg) scale(1); }
+            50% { transform: rotate(3deg) scale(1.1); }
+        }
+
+        .top-line {
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+            margin: 0 auto 30px;
+            border-radius: 1px;
+        }
+
+        .date {
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #c08080;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-family: 'Georgia', serif;
+            font-weight: normal;
+            font-size: 2.2rem;
+            color: #3d3d3d;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #b08080;
+            font-style: italic;
+            margin-bottom: 35px;
+            letter-spacing: 0.5px;
+        }
+
+        .photo-container {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 35px;
+            border: 4px solid #f0d4d4;
+            box-shadow: 0 4px 20px rgba(180, 100, 100, 0.15);
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .message {
+            font-size: 1.05rem;
+            color: #5a5a5a;
+            line-height: 2;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .message .highlight {
+            color: var(--dark-accent);
+            font-style: italic;
+        }
+
+        .emoji-bullet {
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        .rose-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 25px 0;
+            color: var(--accent);
+            font-size: 1rem;
+        }
+
+        .rose-divider .line {
+            width: 60px;
+            height: 1px;
+            background: #f0d0d0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border: 1.5px solid var(--accent);
+            background: transparent;
+            color: var(--dark-accent);
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            font-family: 'Georgia', serif;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background: var(--rose-red);
+            color: white;
+            border-color: var(--rose-red);
+        }
+
+        .hidden-message {
+            display: none;
+            margin-top: 25px;
+            padding: 30px 25px;
+            background: var(--soft-accent);
+            border-radius: 12px;
+            font-style: italic;
+            color: #6a5a5a;
+            line-height: 2.2;
+            animation: gentleAppear 0.8s ease;
+            text-align: left;
+            border: 1px solid #f0d4d4;
+        }
+
+        .hidden-message.show {
+            display: block;
+        }
+
+        .prayer-section {
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px dashed var(--accent);
+        }
+
+        .footer {
+            margin-top: 35px;
+            font-size: 0.8rem;
+            color: #c8a8a8;
+            letter-spacing: 1px;
+        }
+
+        .heart-float {
+            display: inline-block;
+            animation: heartBeat 1.5s infinite;
+        }
+
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            15% { transform: scale(1.3); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.15); }
+            60% { transform: scale(1); }
+        }
+
+        /* Floating rose petals */
+        .petal {
+            position: fixed;
+            pointer-events: none;
+            z-index: 0;
+            animation: petalFall linear infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes petalFall {
+            0% {
+                transform: translateY(-10vh) rotate(0deg);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .overlay.active {
+            display: flex;
+        }
+
+        .overlay img {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            animation: gentleAppear 0.4s ease;
+        }
+
+        @media (max-width: 500px) {
+            .card {
+                padding: 35px 22px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .photo-container {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating rose petals -->
+    <script>
+        const petals = ['🌹', '🥀', '💮', '🏵️', '❤️', '💖'];
+        
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.className = 'petal';
+            petal.textContent = petals[Math.floor(Math.random() * petals.length)];
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.fontSize = (Math.random() * 15 + 12) + 'px';
+            petal.style.animationDuration = (Math.random() * 8 + 10) + 's';
+            petal.style.animationDelay = Math.random() * 5 + 's';
+            document.body.appendChild(petal);
+            
+            setTimeout(() => {
+                petal.remove();
+            }, 16000);
+        }
+        
+        setInterval(createPetal, 3000);
+        for(let i = 0; i < 6; i++) {
+            setTimeout(createPetal, i * 500);
+        }
+    </script>
+
+    <div class="card">
+        <!-- Rose decorations -->
+        <div class="rose-left">🌹</div>
+        <div class="rose-right">🌹</div>
+        
+        <div class="top-line"></div>
+        <div class="date">🌹 June 20, 2026 🌹</div>
+        <h1>🎂 Happy Birthday, Izma! 🎂</h1>
+        <p class="subtitle">to the one who makes everything better ✨</p>
+
+        <!-- Main Photo - Replace with Izma's photo -->
+        <div class="photo-container">
+            <img src="IMG-20260529-WA0006.jpg.jpeg" alt="Izma">
+        </div>
+
+        <div class="message">
+            <p>
+                <span class="emoji-bullet">🌹</span> Some people come into your life and quietly make everything 
+                <span class="highlight">softer, warmer, brighter</span> — 
+                and you're that person for me, <span class="highlight">Izma</span>.
+            </p>
+            <p>
+                <span class="emoji-bullet">💫</span> Today isn't just another date — it's the day the world was blessed 
+                with a <span class="highlight">beautiful soul</span>. And I feel incredibly lucky 
+                that you're part of my life.
+            </p>
+            <p>
+                <span class="emoji-bullet">🫶</span> Your smile, the way you talk, the way you find joy in 
+                the little things — it's all so <span class="highlight">special</span>. 
+                You're the kind of person who makes everything better without even trying.
+            </p>
+        </div>
+
+        <div class="rose-divider">
+            <span class="line"></span> 🌹 <span class="line"></span>
+        </div>
+
+        <button class="btn" onclick="toggleMessage()">💌 A little note for you ✦</button>
+
+        <div class="hidden-message" id="hiddenMsg">
+            <p>
+                <span class="highlight">My dearest Izma,</span> 💗
+            </p>
+            <p>
+                🌹 I don't say it enough, but <span class="highlight">you mean the world to me.</span>
+            </p>
+            <p>
+                🎂 On your birthday, I just want you to know —<br>
+                <strong>you are loved, you are cherished,</strong><br>
+                and you deserve all the happiness this world has to offer.
+            </p>
+            <p>
+                🚀 <strong>And listen —</strong> you are so much stronger than you think. Never 
+                <span class="highlight">underestimate yourself</span>. Whatever dream you hold in your heart, 
+                I know you have the power to make it real. Just believe in yourself, 
+                because you are genuinely <span class="highlight">amazing</span>. 
+                Nothing in this world can stop you once you set your mind to it. 
+                <span class="highlight">Never think small about yourself — you are capable of great things!</span> 💪✨
+            </p>
+            <p>
+                🤲 <strong>My prayer for you:</strong> May God fulfill every wish you hold close, 
+                bless you with health, grant you peace, and keep your face glowing with that 
+                beautiful smile every single day. May your life overflow with so much happiness 
+                that you lose count. May every good thing in this world be written in your destiny. 
+                <span class="highlight">Ameen.</span> 🕊️
+            </p>
+            <p>
+                🤝 <strong>And always remember this:</strong> no matter what happens, 
+                <span class="highlight">I will always be by your side</span>. 
+                In good times and bad — every moment, every step of the way. 
+                You are never alone. <span class="highlight">Never.</span> 🫂
+            </p>
+            <p>
+                🤍 Thank you for being you.<br>
+                <span class="highlight">Happy Birthday, Izma. Always and forever.</span> 
+                <span class="heart-float">💖</span>
+            </p>
+
+            <div class="prayer-section">
+                <p style="font-size: 1.1rem; margin: 0;">
+                    🌹 <strong>May your life bloom like a beautiful rose</strong> 🌹<br>
+                    <span style="font-size: 0.9rem; color: #b86565;">
+                        And may every morning greet you with new hope 🌅
+                    </span>
+                </p>
+            </div>
+        </div>
+
+        <div class="footer">
+            with all my love,<br>
+            <span style="color: var(--dark-accent);">Humza 🤍</span>
+        </div>
+    </div>
+
+    <!-- Fullscreen Photo Overlay -->
+    <div class="overlay" id="overlay" onclick="closePhoto()">
+        <img src="" alt="Memory" id="overlayImg">
+    </div>
+
+    <script>
+        // Toggle hidden message
+        function toggleMessage() {
+            const msg = document.getElementById('hiddenMsg');
+            const btn = document.querySelector('.btn');
+            msg.classList.toggle('show');
+            if (msg.classList.contains('show')) {
+                msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                btn.textContent = '💌 Close note ✦';
+            } else {
+                btn.textContent = '💌 A little note for you ✦';
+            }
+        }
+
+        // Open fullscreen photo
+        function openPhoto(src) {
+            document.getElementById('overlayImg').src = src;
+            document.getElementById('overlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close fullscreen photo
+        function closePhoto() {
+            document.getElementById('overlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close overlay with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closePhoto();
+            }
+        });
+    </script>
+</body>
+</html>
